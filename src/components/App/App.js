@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  border: 1px solid salmon;
-  padding-left: 200px;
+  padding-left: 32px;
 `;
 
 const App = () => (
   <Container>
-    <p>React here!!!</p>
+    <div>React here!</div>
   </Container>
 );
 
