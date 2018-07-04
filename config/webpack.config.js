@@ -1,15 +1,16 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: 'app/index.js'
+    app: 'app/index.js'
   },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: '[name].[hash].main.js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -46,7 +47,9 @@ module.exports = {
     }
   },
   devServer: {
-    port: 3000
+    contentBase: '../build',
+    port: 3000,
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin('../build', {
@@ -58,6 +61,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
