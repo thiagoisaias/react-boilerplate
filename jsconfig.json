@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "es2017",
     "allowSyntheticDefaultImports": false,
-    "baseUrl": "./",
+    "baseUrl": "app",
     "paths": {
-      "components/*": ["./app/components/*"]
+      "components/*": ["app/components/*"]
     }
   },
   "exclude": ["node_modules", "build"]
