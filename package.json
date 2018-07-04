@@ -24,9 +24,10 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "17.0.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-prettier": "^2.6.1",
     "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.75.0",
@@ -53,16 +54,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development",
-    "lint:css": "stylelint './src/**/*.js'",
+    "lint:css": "stylelint './app/**/*.js'",
     "lint:js": "eslint .",
     "test": "jest --watch"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/enzyme.config.js",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "testRegex": "tests/.*\\.test\\.js$",
-    "verbose": true
   }
 }

@@ -5,10 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: 'app/index.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash].main.js'
   },
   module: {
@@ -38,14 +38,21 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      root: path.resolve(__dirname, './'),
+      app: path.resolve(__dirname, './app'),
+      components: path.resolve(__dirname, './app/components')
+    }
+  },
   devServer: {
     port: 3000
   },
   plugins: [
-    new CleanWebpackPlugin('dist', {}),
+    new CleanWebpackPlugin('build', {}),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: './index.html'
+      template: 'app/index.html',
+      filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css'
