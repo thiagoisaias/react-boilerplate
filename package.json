@@ -5,6 +5,44 @@
   "description": "A Basic React Boilerplate",
   "author": "Thiago Isaias da Silva Braga",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config './config/webpack.config.js' --mode production",
+    "dev": "webpack-dev-server --config './config/webpack.config.js' --mode development",
+    "lint:css": "stylelint './app/**/*.js'",
+    "lint:js": "eslint .",
+    "test": "jest --watch"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {}
+    }
+  },
+  "stylelint": {
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-styled-components"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/config/enzyme.config.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testRegex": "tests/.*\\.test\\.js$",
+    "verbose": true
+  },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
     "babel-cli": "^6.26.0",
@@ -50,12 +88,5 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
     "webpack-md5-hash": "^0.0.6"
-  },
-  "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development",
-    "lint:css": "stylelint './app/**/*.js'",
-    "lint:js": "eslint .",
-    "test": "jest --watch"
   }
 }
