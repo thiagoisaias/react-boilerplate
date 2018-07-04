@@ -1,12 +1,10 @@
 {
-  // ESLint Config
   "eslint.run": "onSave",
   "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
   "prettier.eslintIntegration": true,
-  // Required by Flow
   "javascript.validate.enable": false,
   "javascript.format.enable": false,
   "flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
-  "flow.showStatus": true,
+  "flow.showStatus": true
 }
