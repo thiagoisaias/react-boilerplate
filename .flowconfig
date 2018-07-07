@@ -1,12 +1,15 @@
 [ignore]
-./dist
+./build
 
 [include]
 
 [libs]
+types/module.js
 
 [lints]
 
 [options]
+module.name_mapper='^components' -> '<PROJECT_ROOT>/app/components'
+module.name_mapper='^store' -> '<PROJECT_ROOT>/app/store'
 
 [strict]
