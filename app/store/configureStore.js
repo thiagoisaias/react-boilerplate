@@ -4,11 +4,12 @@
 
 // @flow
 import { createStore, applyMiddleware, compose } from 'redux';
+import type { Store } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
 
 /* eslint-disable no-underscore-dangle */
-export default function configureStore() {
+export default function configureStore(): Store {
   const isProductionEnv = process.env.NODE_ENV === 'production';
 
   // Redux DevTools shouldn't be enabled in production env

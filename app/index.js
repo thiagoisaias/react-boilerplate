@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -5,10 +6,21 @@ import ReactDOM from 'react-dom';
 import './globalStyles';
 import 'normalize.css';
 
-import App from 'components/App';
+import Root from 'components/Root';
+import configureStore from 'store/configureStore';
+
+const store = configureStore();
 
 const rootElement = document.getElementById('root');
 
-ReactDOM.render(<App />, rootElement);
+if (rootElement !== null) {
+  ReactDOM.render(<Root store={store} />, rootElement);
 
-module.hot.accept();
+  if (module.hot) {
+    module.hot.accept('./components/Root', () => {
+      ReactDOM.render(<Root store={store} />, rootElement);
+    });
+  }
+} else {
+  throw new Error("No root element.");
+}
