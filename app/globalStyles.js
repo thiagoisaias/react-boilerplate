@@ -1,3 +1,7 @@
+/**
+ * Inject global styles using styled components.
+ */
+
 import { injectGlobal } from 'styled-components';
 
 /* eslint no-unused-expressions: 0 */

@@ -1,8 +1,8 @@
 /**
  * Create a Redux Store.
+ * @flow
  */
 
-// @flow
 import { createStore, applyMiddleware, compose } from 'redux';
 import type { Store } from 'redux';
 import thunk from 'redux-thunk';

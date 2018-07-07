@@ -1,4 +1,8 @@
-// @flow
+/**
+ * Define app entry point.
+ * @flow
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -8,8 +12,9 @@ import 'normalize.css';
 
 import Root from 'components/Root';
 import configureStore from 'store/configureStore';
+import type { Store } from 'redux';
 
-const store = configureStore();
+const store: Store = configureStore();
 
 const rootElement = document.getElementById('root');
 
@@ -22,5 +27,5 @@ if (rootElement !== null) {
     });
   }
 } else {
-  throw new Error("No root element.");
+  throw new Error('No root element.');
 }
