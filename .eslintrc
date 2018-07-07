@@ -19,9 +19,7 @@
   "plugins": ["import", "jsx-a11y", "prettier"],
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": "./config/webpack.config.js"
-      }
+      "babel-module": {}
     }
   }
 }

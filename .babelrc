@@ -12,6 +12,14 @@
         "displayName": true,
         "fileName": false
       }
+    ],
+    [
+      "module-resolver", {
+        "alias": {
+          "components": "./app/components",
+          "store": "./app/store"
+        }
+      }
     ]
   ]
 }
